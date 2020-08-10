@@ -1,3 +1,3 @@
-# TC1031_Estructuras_Formativas
+# TC1031-Formativas
 
-Repositorio de ejemplo
+Repositorio de actividades formativas

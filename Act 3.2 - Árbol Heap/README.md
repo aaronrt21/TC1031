@@ -2,6 +2,8 @@
 
 **Actividad 3.2 - Árbol Heap: Implementación de una fila priorizada**
 
+*La autoría del documento exception.h es del profesor Pedro Óscar Pérez Murrieta.
+
 **Análisis de complejidad**
 
 **push**

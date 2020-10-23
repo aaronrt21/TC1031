@@ -384,7 +384,7 @@ int Node<T>::height() const {
 	if (lev_right > lev_left) {
 		return lev_right;
 	} else {
-		return lev_left
+		return lev_left;
 	}
 }
 

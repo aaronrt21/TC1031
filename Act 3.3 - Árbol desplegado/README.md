@@ -4,16 +4,17 @@
 
 **add**
 
-La función add agrega un valor al árbol igual que en un BST. Después de agregarlo, se realiza un splay para que el valor recién agregado se vaya al root.
+La función add agrega un valor al árbol igual que en un BST. Después de agregarlo, se realiza un splay para que el valor recién agregado se vaya al root. Como el
+algoritmo no garantiza un árbol balanceado, el add puede generar un árbol degenerado, lo cual hace que su complejidad sea de O(n).
 
 **remove**
 
 La función remove elimina un nodo del árbol siguiendo el mismo proceso que un BST. Después de eliminarlo, realiza un splay sobre el padre del nodo eliminado para
-moverlo al root.
+moverlo al root. Como tiene que recorrer nodo por nodo, el algoritmo tiene complejidad O(n).
 
 **find**
 
-Esta función busca un valor y realiza un splay sobre el nodo en el que se encuentra para moverlo al root del árbol.
+Esta función busca un valor y realiza un splay sobre el nodo en el que se encuentra para moverlo al root del árbol. El algoritmo de búsqueda tiene complejidad O(n).
 
 **inorder**
 
@@ -22,10 +23,4 @@ se incluye la función preorder, la cual despliega el root de un subárbol, su i
 
 **size**
 
-Esta función simplemente regresa una constante. La constante representa la cantidad de datos guardados en el árbol.
-
-**Complejidad**
-
-A pesar de que se dice que un Splay Tree tiene una complejidad O(log(n)), el hecho de que no garantiza que el árbol esté balanceado puede ocasionar que este se vuelva
-degenerado. Si se tiene un árbol degenerado (peor de los casos), la complejidad de las funciones add, remove, find e inorder se volverá lineal (O(n)). La función
-size, al regresar una constante, tiene una complejidad de O(1).
+Esta función simplemente regresa una constante, por lo que su complejidad es de O(1). La constante representa la cantidad de datos guardados en el árbol.

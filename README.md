@@ -7,4 +7,6 @@
 * Se agregó el análisis de complejidad para las funciones add, remove, find e inorder del archivo splay.h.
  
 **Act 4.1 - Grafos**
-* Se subió la actividad.
+* Se subieron los archivos graph.h, g1.txt y g2.txt.
+
+* Se agregó el análisis de complejidad de las funciones de graph.h.

@@ -40,14 +40,14 @@ void Graph::loadGraphList(string nombre, int nodos, int arcos){
         vector<int> list;          
         adjList.push_back(list);
     }
-    ifstream arch;
-    arch.open(nombre);
-    while(arch.good()){
+    ifstream file;
+    file.open(nombre);
+    while(file.good()){
         string x;
         string y;
-        getline(arch, x, ','); 
+        getline(file, x, ','); 
 		if (x != ""){
-			getline(arch, y, '\n');
+			getline(file, y, '\n');
 			x = x.substr(1, x.length()-1);
 			y = y.substr(1, y.length()-2);
 			int u = stoi(x);
@@ -61,15 +61,15 @@ void Graph::loadGraphList(string nombre, int nodos, int arcos){
 
 //PRINTADJLIST
 string Graph::printAdjList(){
-    string data = "";
+    string res = "";
 	for(int i = 0; i < adjList.size(); i++){
-		data += "vertex " + to_string(i) + " : ";
+		res += "vertex " + to_string(i) + " : ";
 		sort(adjList[i].begin(), adjList[i].end());
 		for(int j = 0; j < adjList[i].size(); j++){
-			data += to_string(adjList[i][j]) + " ";
+			res += to_string(adjList[i][j]) + " ";
 		}
 	}
-	return data;
+	return res;
 }
 
 //LOADGRAPHMAT
@@ -80,14 +80,14 @@ void Graph::loadGraphMat(string nombre, int nodos, int arcos){
         vector<int> matrix(nodos, 0);
         adjMat.push_back(matrix);
     }
-    ifstream arch;
-    arch.open(nombre);
-    while(arch.good()){
+    ifstream file;
+    file.open(nombre);
+    while(file.good()){
         string x;
         string y;
-        getline(arch, x, ',');
+        getline(file, x, ',');
 		if(x != ""){
-			 getline(arch, y, '\n');
+			 getline(file, y, '\n');
 			x = x.substr(1, x.length()-1);
 			y = y.substr(1, y.length()-2);
 			int u = stoi(x);
@@ -101,16 +101,16 @@ void Graph::loadGraphMat(string nombre, int nodos, int arcos){
 
 //PRINTADJMAT/////
 string Graph::printAdjMat(){
-    string data = "";
+    string res = "";
 	for(int i = 0; i < adjMat.size(); i++){
 		for(int j = 0; j < adjMat[i].size(); j++){
-			data = data + to_string(adjMat[i][j]) + " ";
+			res = res + to_string(adjMat[i][j]) + " ";
 		}
 	}
-	return data;
+	return res;
 }
 
-//DFSearch/////
+//DFSefile/////
 string Graph::DFS(int x, int z){
 	vector<vector<int> > adjList2;
 	for (int i=0; i<adjList.size(); i++){
@@ -154,12 +154,12 @@ string Graph::DFS(int x, int z){
 	stack.push_back(pos);
 	string svisited = show(visited);
 	string spath = show(stack);
-	string data = "visited: " + svisited + "path: " + spath;
-	data = data.substr(0, data.size()-1);
-	return data;
+	string res = "visited: " + svisited + "path: " + spath;
+	res = res.substr(0, res.size()-1);
+	return res;
 }
 
-//BFSearch/////
+//BFSefile/////
 string Graph::BFS(int x, int z){
     vector<vector<int>> queue;
 	vector<vector<int>> visited;
@@ -198,23 +198,23 @@ string Graph::BFS(int x, int z){
 			}
 		}
 	} while (find != -1);
-	vector<int> converted_visited;
+	vector<int> visited_aux;
 	for (int i=0; i<visited.size(); i++){
-		converted_visited.push_back(visited[i][1]);
+		visited_aux.push_back(visited[i][1]);
 	}
-	string svisited = show(converted_visited);
+	string svisited = show(visited_aux);
 	string spath = show(path);
-	string data = "visited: " + svisited + "path: " + spath;
-	data = data.substr(0, data.size()-1);
-	return data;
+	string res = "visited: " + svisited + "path: " + spath;
+	res = res.substr(0, res.size()-1);
+	return res;
 }
 
 //SHOW/////
 string show(vector<int> v){
-	string data = "";
+	string res = "";
 	for (int i = 0; i < v.size(); i++){
-		data = data + to_string(v[i]) + " ";
+		res = res + to_string(v[i]) + " ";
 	}
-	return data;
+	return res;
 }
-#endif /* GRAPH_H */
+#endif

@@ -1,4 +1,4 @@
-#**TC1031 Actividades Formativas**
+**TC1031 Actividades Formativas**
 
 **Aarón Gonzalo Ramírez Tafolla - A01351621**
 
